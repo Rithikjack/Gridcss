@@ -1,0 +1,134 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.outer{
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    justify-content: center;
+    /* align-content: center; */
+    grid-template-rows: 90px calc(100vh - 180px) 90px;
+}
+
+.outer>#b1{
+    grid-column: span 2;
+    background: linear-gradient(rgb(56, 56, 134),white);
+    display: flex;
+    justify-content: space-around;
+    color: rgb(28, 25, 25);
+    align-items: center;
+}
+.outer>#b1 >h1{
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+
+}
+.outer>#b1 >ul{
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;  
+    cursor: pointer;
+}
+.outer>#b1 >ul> li{
+     position: relative;
+}
+.outer>#b1 >ul> li::after{
+    content: "";
+    height: 3px;
+    background-color: rgb(255, 75, 216);
+    border-radius: 3px;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    position: absolute;
+    transition: all 1s ease-in;
+
+}
+.outer>#b1 >ul> li:hover::after{  
+    width: 100%;
+}
+.outer>#b2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid black;
+}
+.outer>#b2 > img{
+    width: 70%;
+    height: 80%;
+}
+#b3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+}
+#b3 >h1{
+    text-transform: capitalize;
+    letter-spacing: 1.2px;
+    animation: movingtext 2s ease-in infinite;
+}
+#b3 >h1 >span{
+    color: green;
+}
+
+@keyframes movingtext {
+    0%{
+        transform: translateY(30px);
+        opacity: 0;
+
+    }
+    20%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    80%{
+         transform: translateY(0);
+         opacity: 1;
+    }
+    100%{
+        transform: translateY(-30px);
+         opacity: 0;
+
+
+    }
+    
+}
+#b3 >p{
+    letter-spacing: 1.2px;
+    line-height: 1.5em;
+}
+#b3 >button{
+    height: 40px;
+    width: 120px;
+    border-radius: 5px;
+    border: none;
+    background-color: aqua;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+}
+#b3 >button:hover{
+    background-color: chocolate;
+}
+.outer>#b4{
+    grid-column: span 2;
+    /* height: 200px; */
+    /* background-color: blue; */
+    background: linear-gradient(to top,rgb(56, 56, 134),white);
+    justify-content: center ;
+    align-items: center;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+}
